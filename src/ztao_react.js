@@ -188,7 +188,7 @@ export function zuixiaozhi(arr){
 
 
 //数组排序
-export function paixu(zmp,arr){
+export function paixu(arr,zmp=3){
     arr.sort(function(a, b) {
         if(zmp == 1){
             return a - b;   //从小到大排
