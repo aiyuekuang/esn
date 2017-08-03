@@ -4,11 +4,7 @@
   "description": "demo",
   "main": "./index.js",
   "scripts": {
-    "start2": "webpack-dev-server --inline --hot",
-    "start": "node server.js",
-    "build": "webpack --progress --colors --watch --config webpack.config.js",
-    "clean": "rd /s/q lib && mkdir lib",
-    "lib": "babel src --out-file index.js ",
+    "build": "babel src --out-file index.js ",
     "fabu": "npm publish"
   },
   "files": [
