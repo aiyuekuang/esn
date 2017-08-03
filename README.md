@@ -1,9 +1,8 @@
 # 这是一个常用js集合的小型库
 这个库是个前端时代常用得js小集合，我收集整理并修正后放入这个库，这个库会长期更新，更新后会在git中写出，敬请留意（喜欢得朋友不要吝啬自己的小星星哦）  
 
-[文档地址](https://github.com/aiyuekuang/ztao_ku.wiki.git)  
+[文档地址](https://github.com/aiyuekuang/ztao_ku/blob/master/wendang.md)  
 
-这个文档地址，有时会有问题，github的问题，文档就在wiki里你把页面滑到上面找找就知道了
 # 下载方式
     npm install ztao_ku
 
