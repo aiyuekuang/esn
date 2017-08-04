@@ -2,7 +2,7 @@
  * Created by zengtao on 2017/3/29.
  */
 //正则区域
-export const zhengze={
+export const reg={
     emailReg:/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/,//emall
     ip:/^(\d+)\.(\d+)\.(\d+)\.(\d+)$/g,//ip地址
     shuzi:"^[0-9]*$",//只能输入数字
@@ -60,7 +60,7 @@ export function shans_all(val){
     return sessionStorage.clear();
 }
 //判断数组中是否包含元素
-export function arrbaohan(arr,shan){
+export function arr_in(arr,shan){
     let zhi = arr.findIndex(function(value, index, arr) {
         return value == shan;
     })
@@ -72,7 +72,7 @@ export function arrbaohan(arr,shan){
 
 }
 //删除数组中得第一个出现得
-export function arrshan(arr,shan){
+export function arr_del(arr,shan){
    let zhi = arr.findIndex(function(value, index, arr) {
         return value == shan;
     })
@@ -93,13 +93,13 @@ export function changgepage(url,parm){
 }
 
 //输入数组，会随机抽取数组中得一个值输出
-export function suiji(arr){
+export function arr_random(arr){
     return arr[Math.floor((Math.random()*arr.length))];
 }
 
 
 //输入3000，变成3,000.00
-export function Convert(money)
+export function convert(money)
 {
     var s = money; //获取小数型数据
     s += "";
@@ -151,7 +151,7 @@ export function NowTimeCode(){
 }
 
 //获取当前日期
-export function getNowDate(){
+export function getNowDate(lianjie='-'){
     var now = new Date();
     var month=now.getMonth()+1;
     if(month<10){
@@ -161,11 +161,11 @@ export function getNowDate(){
     if(day<10){
         day="0"+day;
     }
-    return now.getFullYear() +"-"+month+"-"+day;
+    return now.getFullYear() +lianjie+month+lianjie+day;
 }
 
 //数组去除重复chongfu([1,2,3,4,5,1,1]),返回12345
-export function chongfu(arr) {
+export function arr_repeat(arr) {
     var result = [], json = {};
     for (var i = 0, len = arr.length; i < len; i++){
         if (!json[arr[i]]) {
@@ -177,18 +177,18 @@ export function chongfu(arr) {
 };
 
 //取最大值
-export function zuidazhi(arr){
+export function arr_max(arr){
    return Math.max.apply(Math, arr);
 }
 
 //取最小值
-export function zuixiaozhi(arr){
+export function arr_min(arr){
     return Math.min.apply(Math, arr);
 }
 
 
 //数组排序
-export function paixu(arr,zmp=3){
+export function arr_sort(arr,zmp=3){
     arr.sort(function(a, b) {
         if(zmp == 1){
             return a - b;   //从小到大排
@@ -202,7 +202,7 @@ export function paixu(arr,zmp=3){
 }
 
 //截取字符串
-export function cutstr(str, length) {
+export function str_cut(str, length) {
     let len = length * 2;
     var temp;
     var icount = 0;
@@ -225,7 +225,7 @@ export function cutstr(str, length) {
 }
 
 //清除句子中包含得空格
-export function quchukongge(zi)
+export function str_Space(zi)
 {
     var result = zi.replace(/(^\s+)|(\s+$)/g,"");
     return result.replace(/\s/g,"");
@@ -280,12 +280,12 @@ export function download(href, title) {
 }
 
 //判断是不是空对象
-export function kongobj(obj){
+export function obj_empty(obj){
     return JSON.stringify(obj) == "{}"
 }
 
-//判断是否为null或者undefind
-export function kong(zhi){
+//判断值是否为null或者undefind
+export function val_empty(zhi){
     if(zhi == null || typeof (zhi) == "undefined"){
         return false
     }else if(typeof (zhi) == "object"){
@@ -296,7 +296,7 @@ export function kong(zhi){
 }
 
 //判断是否包含字符串
-export function baohan(str,zi){
+export function str_val(str,zi){
     if(str.indexOf(zi) >= 0 ){
         return true;
     }else {
@@ -305,7 +305,7 @@ export function baohan(str,zi){
 }
 //保留两位小数
 //功能：将浮点数四舍五入，取小数点后2位
-export function toDecimal(x) {
+export function num_Rounding(x) {
     var f = parseFloat(x);
     if (isNaN(f)) {
         return;

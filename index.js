@@ -14,30 +14,30 @@ exports.qus = qus;
 exports.qus_obj = qus_obj;
 exports.shans = shans;
 exports.shans_all = shans_all;
-exports.arrbaohan = arrbaohan;
-exports.arrshan = arrshan;
+exports.arr_in = arr_in;
+exports.arr_del = arr_del;
 exports.changgepage = changgepage;
-exports.suiji = suiji;
-exports.Convert = Convert;
+exports.arr_random = arr_random;
+exports.convert = convert;
 exports.NowTimeCode = NowTimeCode;
 exports.getNowDate = getNowDate;
-exports.chongfu = chongfu;
-exports.zuidazhi = zuidazhi;
-exports.zuixiaozhi = zuixiaozhi;
-exports.paixu = paixu;
-exports.cutstr = cutstr;
-exports.quchukongge = quchukongge;
+exports.arr_repeat = arr_repeat;
+exports.arr_max = arr_max;
+exports.arr_min = arr_min;
+exports.arr_sort = arr_sort;
+exports.str_cut = str_cut;
+exports.str_Space = str_Space;
 exports.appendscript = appendscript;
 exports.download = download;
-exports.kongobj = kongobj;
-exports.kong = kong;
-exports.baohan = baohan;
-exports.toDecimal = toDecimal;
+exports.obj_empty = obj_empty;
+exports.val_empty = val_empty;
+exports.str_val = str_val;
+exports.num_Rounding = num_Rounding;
 /**
  * Created by zengtao on 2017/3/29.
  */
 //正则区域
-var zhengze = exports.zhengze = {
+var reg = exports.reg = {
     emailReg: /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/, //emall
     ip: /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/g, //ip地址
     shuzi: "^[0-9]*$", //只能输入数字
@@ -93,7 +93,7 @@ function shans_all(val) {
     return sessionStorage.clear();
 }
 //判断数组中是否包含元素
-function arrbaohan(arr, shan) {
+function arr_in(arr, shan) {
     var zhi = arr.findIndex(function (value, index, arr) {
         return value == shan;
     });
@@ -104,7 +104,7 @@ function arrbaohan(arr, shan) {
     }
 }
 //删除数组中得第一个出现得
-function arrshan(arr, shan) {
+function arr_del(arr, shan) {
     var zhi = arr.findIndex(function (value, index, arr) {
         return value == shan;
     });
@@ -125,12 +125,12 @@ function changgepage(url, parm) {
 }
 
 //输入数组，会随机抽取数组中得一个值输出
-function suiji(arr) {
+function arr_random(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
 //输入3000，变成3,000.00
-function Convert(money) {
+function convert(money) {
     var s = money; //获取小数型数据
     s += "";
     if (s.indexOf(".") == -1) s += ".00"; //如果没有小数点，在后面补个小数点和00
@@ -179,6 +179,8 @@ function NowTimeCode() {
 
 //获取当前日期
 function getNowDate() {
+    var lianjie = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '-';
+
     var now = new Date();
     var month = now.getMonth() + 1;
     if (month < 10) {
@@ -188,11 +190,11 @@ function getNowDate() {
     if (day < 10) {
         day = "0" + day;
     }
-    return now.getFullYear() + "-" + month + "-" + day;
+    return now.getFullYear() + lianjie + month + lianjie + day;
 }
 
 //数组去除重复chongfu([1,2,3,4,5,1,1]),返回12345
-function chongfu(arr) {
+function arr_repeat(arr) {
     var result = [],
         json = {};
     for (var i = 0, len = arr.length; i < len; i++) {
@@ -205,17 +207,19 @@ function chongfu(arr) {
 };
 
 //取最大值
-function zuidazhi(arr) {
+function arr_max(arr) {
     return Math.max.apply(Math, arr);
 }
 
 //取最小值
-function zuixiaozhi(arr) {
+function arr_min(arr) {
     return Math.min.apply(Math, arr);
 }
 
 //数组排序
-function paixu(zmp, arr) {
+function arr_sort(arr) {
+    var zmp = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3;
+
     arr.sort(function (a, b) {
         if (zmp == 1) {
             return a - b; //从小到大排
@@ -229,7 +233,7 @@ function paixu(zmp, arr) {
 }
 
 //截取字符串
-function cutstr(str, length) {
+function str_cut(str, length) {
     var len = length * 2;
     var temp;
     var icount = 0;
@@ -252,7 +256,7 @@ function cutstr(str, length) {
 }
 
 //清除句子中包含得空格
-function quchukongge(zi) {
+function str_Space(zi) {
     var result = zi.replace(/(^\s+)|(\s+$)/g, "");
     return result.replace(/\s/g, "");
 }
@@ -302,12 +306,12 @@ function download(href, title) {
 }
 
 //判断是不是空对象
-function kongobj(obj) {
+function obj_empty(obj) {
     return JSON.stringify(obj) == "{}";
 }
 
-//判断是否为null或者undefind
-function kong(zhi) {
+//判断值是否为null或者undefind
+function val_empty(zhi) {
     if (zhi == null || typeof zhi == "undefined") {
         return false;
     } else if ((typeof zhi === "undefined" ? "undefined" : _typeof(zhi)) == "object") {
@@ -318,7 +322,7 @@ function kong(zhi) {
 }
 
 //判断是否包含字符串
-function baohan(str, zi) {
+function str_val(str, zi) {
     if (str.indexOf(zi) >= 0) {
         return true;
     } else {
@@ -327,7 +331,7 @@ function baohan(str, zi) {
 }
 //保留两位小数
 //功能：将浮点数四舍五入，取小数点后2位
-function toDecimal(x) {
+function num_Rounding(x) {
     var f = parseFloat(x);
     if (isNaN(f)) {
         return;
