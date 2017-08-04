@@ -7,9 +7,9 @@
     npm install esn
 
 # 使用方式
-    import {cutstr} from 'esn';
+    import {str_cut} from 'esn';
     
-    cutstr('还是大家还是觉得好就是当今世界的技术的',6)
+    str_cut('还是大家还是觉得好就是当今世界的技术的',6)
     
     大概就是这样
 # 希望
