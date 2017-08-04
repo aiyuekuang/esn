@@ -4,6 +4,8 @@
 [文档地址](https://github.com/aiyuekuang/esn/blob/master/wendang.md)  
 
 # 下载方式
+esn得意思就是es new得意思,最新es  
+
     npm install esn
 
 # 使用方式

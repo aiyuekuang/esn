@@ -72,7 +72,8 @@
     
 # 其它小功能
 1. zhengze 类型：对象  
-    说明：
+    说明：  
+    
         reg.emailReg:emall  
         reg.ip:ip地址  
         reg.shuzi:只能输入数字  
