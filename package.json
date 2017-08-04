@@ -1,20 +1,18 @@
 {
-  "name": "ztao_ku",
-  "version": "1.0.1",
-  "description": "demo",
+  "name": "esn",
+  "version": "1.0.0",
+  "description": "esn.js",
   "main": "./index.js",
   "scripts": {
     "build": "babel src --out-file index.js ",
     "fabu": "npm publish"
   },
   "files": [
-    "build",
-    "lib",
     "index.js"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aiyuekuang/ztao_npm_demo.git"
+    "url": "git+https://github.com/aiyuekuang/esn.git"
   },
   "keywords": [
     "ztao"
@@ -22,9 +20,9 @@
   "author": "ztao",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aiyuekuang/ztao_npm_demo/issues"
+    "url": "https://github.com/aiyuekuang/esn/issues"
   },
-  "homepage": "https://github.com/aiyuekuang/ztao_npm_demo#readme",
+  "homepage": "https://github.com/aiyuekuang/esn#readme",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.21.0",
