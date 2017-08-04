@@ -225,7 +225,7 @@ export function str_cut(str, length) {
 }
 
 //清除句子中包含得空格
-export function str_Space(zi)
+export function str_space(zi)
 {
     var result = zi.replace(/(^\s+)|(\s+$)/g,"");
     return result.replace(/\s/g,"");

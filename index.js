@@ -26,7 +26,7 @@ exports.arr_max = arr_max;
 exports.arr_min = arr_min;
 exports.arr_sort = arr_sort;
 exports.str_cut = str_cut;
-exports.str_Space = str_Space;
+exports.str_space = str_space;
 exports.appendscript = appendscript;
 exports.download = download;
 exports.obj_empty = obj_empty;
@@ -256,7 +256,7 @@ function str_cut(str, length) {
 }
 
 //清除句子中包含得空格
-function str_Space(zi) {
+function str_space(zi) {
     var result = zi.replace(/(^\s+)|(\s+$)/g, "");
     return result.replace(/\s/g, "");
 }

@@ -24,7 +24,7 @@
 1. str_cut(str, length) 类型：函数        参数说明：str是目标字符串，length是要多长  
     说明：截取字符串，length输入2得话就是，  例如：哈哈...
 
-2. str_Space(zi) 类型：函数        参数说明：zi就是目标字符串  
+2. str_space(zi) 类型：函数        参数说明：zi就是目标字符串  
     说明：清除句子中包含得空格
     
 3. str_val(str,zi) 类型：函数        参数说明：str就是目标字符串，zi就是想查询是否包含得zi  
