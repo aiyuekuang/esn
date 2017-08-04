@@ -71,7 +71,7 @@
     说明：判断是否为null或者undefind
     
 # 其它小功能
-1. zhengze 类型：对象  
+1. reg 类型：对象  
     说明：  
     
         reg.emailReg:emall  
