@@ -57,7 +57,7 @@
 6. shans(key) 类型：函数        参数说明：key是存得值得名称  
     说明：sessionStorage的存储，删之前存得值
 
-7. qusqus_obj(key) 类型：函数        参数说明：key是存得值得名称  
+7. qus_obj(key) 类型：函数        参数说明：key是存得值得名称  
     说明：sessionStorage的存储，取之前存得对象，直接返回对象
 
 8. shans_all() 类型：函数  

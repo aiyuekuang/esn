@@ -312,7 +312,7 @@ function obj_empty(obj) {
 
 //判断值是否为null或者undefind
 function val_empty(zhi) {
-    if (zhi == null || typeof zhi == "undefined") {
+    if (zhi == null || typeof zhi == "undefined" || zhi == '') {
         return false;
     } else if ((typeof zhi === "undefined" ? "undefined" : _typeof(zhi)) == "object") {
         return true;
@@ -323,6 +323,10 @@ function val_empty(zhi) {
 
 //判断是否包含字符串
 function str_val(str, zi) {
+    if (typeof str !== 'string') {
+        console.log('错误：这不是一个字符串');
+        return false;
+    }
     if (str.indexOf(zi) >= 0) {
         return true;
     } else {
