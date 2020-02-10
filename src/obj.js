@@ -1,6 +1,6 @@
 
 //判断是不是空对象
-export function objEmpty(obj){
+export function isObjEmpty(obj){
     return JSON.stringify(obj) == "{}"
 }
 
@@ -8,10 +8,6 @@ export function objEmpty(obj){
 //比较两个对象是否一样、
 export let diffObj = (obj1, obj2) => {
     return JSON.stringify(obj1) !== JSON.stringify(obj2);
-};
-
-export let isEmptyObj = obj => {
-    return JSON.stringify(obj) !== '{}';
 };
 
 

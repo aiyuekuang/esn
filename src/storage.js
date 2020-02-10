@@ -49,6 +49,6 @@ export function shans(val){
     return sessionStorage.removeItem(val);
 }
 
-export function shansAll(val){
+export function shansAll(){
     return sessionStorage.clear();
 }

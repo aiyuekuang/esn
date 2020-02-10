@@ -1,8 +1,8 @@
 //判断值是否为null或者undefind
-export function valEmpty(zhi){
-    if(zhi == null || typeof (zhi) == "undefined" || zhi == ''){
+export function isValEmpty(val){
+    if(val == null || typeof (val) == "undefined" || val == ''){
         return false
-    }else if(typeof (zhi) == "object"){
+    }else if(typeof (val) == "object"){
         return true
     }else {
         return true
