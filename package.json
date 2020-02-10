@@ -2,13 +2,14 @@
   "name": "esn",
   "version": "1.0.4",
   "description": "esn.js",
-  "main": "./index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "build": "babel src --out-file index.js ",
+    "clean": "rd /s/q lib && mkdir lib",
+    "lib": "npm run clean && babel src --out-dir lib",
     "fabu": "npm publish"
   },
   "files": [
-    "index.js"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -32,5 +33,6 @@
     "babel-preset-stage-0": "^6.22.0"
   },
   "dependencies": {
+    "moment": "^2.24.0"
   }
 }
