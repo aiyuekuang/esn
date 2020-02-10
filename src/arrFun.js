@@ -1,4 +1,4 @@
-import { cloneop } from './common';
+import { cloneop } from './obj';
 
 //查
 //数组获取最后一个元素

@@ -28,7 +28,7 @@ export function numFormatThousand(num) {
 }
 
 //判断是不是数字,包括小数点类型的数据
-export function isNumber(val) {
+export function isNumberop(val) {
     let regPos = /^\d+(\.\d+)?$/; //非负浮点数
     let regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
     return (regPos.test(val) || regNeg.test(val))

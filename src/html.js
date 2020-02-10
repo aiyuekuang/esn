@@ -1,7 +1,7 @@
 /**
  * 动态加载脚本文件
  */
-export function appendscript(src, text, reload, charset) {
+export function appendScript(src, text, reload, charset) {
     let id = hash(src + text);
     if (!reload && in_array(id, evalscripts))
         return;
@@ -65,7 +65,7 @@ export let downloads = (output, downloadFileName = '文件') => {
 };
 
 
-//web开发相关
+//web开发相关,获取url中的参数
 export let getUrlParam = name => {
     let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
     let r = window.location.search.substr(1).match(reg);
