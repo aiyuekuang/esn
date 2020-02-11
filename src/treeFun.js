@@ -144,16 +144,7 @@ export let treeHasKey = (tree, key, children = 'children') => {
 // };
 
 //增
-//将树形数组中的所有第二层的children组合到一个数组中      console.log('111111111示例：', arrChild([{ id: 1, children:[{ id: 2, children: [{ id: 3, children: { id: 8, } }] }] }]));
-export let arrChild = arr => {
-  let arr_ = [];
-  for (let i of arr) {
-    if (i.children) {
-      arr_ = [...i.children, ...arr_];
-    }
-  }
-  return arr_;
-};
+
 
 //删
 
