@@ -84,6 +84,37 @@ export let treeSearchByArr = (tree, arr, label = 'id', children = 'children') =>
   return obj;
 };
 
+//与treeSearchByArr一样，但是返回的是一个从上至下的层级数组
+export let treeSearchArrByArr = (tree, arr, label = 'id', children = 'children') => {
+  let layer = 0;
+  let obj = [];
+  if (!tree) {
+    console.log('提示', '你传递的tree是空');
+  }
+  let tree_ = cloneop(tree);
+  if (!isArrayop(tree_)) {
+    tree_ = [tree_];
+  }
+  let loop = tree_ => {
+    if (layer === 0) {
+      obj = []
+    }
+    for (let i of tree_) {
+      if (i[label] === arr[layer]) {
+        layer++;
+        obj.push(i)
+        if (arr[layer] && i[children] && i[children].length) {
+          loop(i[children]);
+        } else {
+          break;
+        }
+      }
+    }
+  };
+  loop(tree_);
+  return obj;
+};
+
 //树数组中是否包含某个键值     console.log('111111111示例：', treeHasKey([{ id: 1, children:[{ id: 2, children: [{ id: 3, children: { id: 8, } }] }] }],"id"));
 export let treeHasKey = (tree, key, children = 'children') => {
   let isEqual = false;

@@ -1,4 +1,6 @@
 //截取字符串
+import {stringArrAddValue} from "./arrFun";
+
 export function strCut(str, length) {
     let len = length * 2;
     let temp;
@@ -46,6 +48,14 @@ export let uid = () => {
     });
 };
 
+
+//将一个多层的url转变成一个逐级的url数组
+export let urlToArr = (value) => {
+    if (!value) {
+        return []
+    }
+    return stringArrAddValue(arrDelNull(value.split("/")))
+}
 //是否是字符串
 export function isString(value) {
     return Object.prototype.toString.call(value)=="[object String]"

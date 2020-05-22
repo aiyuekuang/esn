@@ -142,6 +142,15 @@ export let arrChild = arr => {
   return arr_;
 };
 
+//一个字符串数组，在每个数组前面加上一个固定字符，比如每个字符前面加上/成为url
+export let stringArrAddValue = (arr, value = "/") => {
+    let _arr = [...arr];
+    for (let i of _arr.keys()) {
+        _arr[i] = value + _arr[i]
+    }
+    return _arr
+}
+
 //数组换位置[1,2,3] >>>>> [3,1,2]，arr是原数组，index1,2是需要换位置的2个元素的下标   console.log('111111111示例：', swapArray([1,2,3],1,2));  111111111示例： (3) [1, 3, 2]
 export let swapArray = (arr, index1, index2) => {
   arr[index1] = arr.splice(index2, 1, arr[index1])[0];
