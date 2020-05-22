@@ -68,15 +68,14 @@ export let treeSearchByArr = (tree, arr, label = 'id', children = 'children') =>
   if (!isArrayop(tree_)) {
     tree_ = [tree_];
   }
-  let loop = tree_ => {
+  let loop = (tree_,layer = 0) => {
+
     for (let i of tree_) {
       if (i[label] === arr[layer]) {
-        layer++;
-        if (arr[layer] && i[children] && i[children].length) {
-          loop(i[children]);
-        } else {
+        if (arr[layer] && i[children] && i[children].length >0) {
+          loop(i[children],layer + 1);
+        } else if(layer === (arr.length - 1)){
           obj = i;
-          break;
         }
       }
     }

@@ -1,4 +1,5 @@
 import { cloneop } from './obj';
+import {StringToNumber} from "./string";
 
 //查
 //数组获取最后一个元素
@@ -70,11 +71,19 @@ export function arrFindMin(arr){
     return Math.min.apply(Math, arr);
 }
 
+//字符串数组相加并且返回
+export let arrAdd = (arr,otherString="")=>{
+    let value = "";
+    for (let i of arr){
+        value+=(otherString + i);
+    }
+    return value;
+}
 
 
 //删
 //js删除数组最后一个元素
-export let truncate = arr => {
+export function truncate(arr){
   let m = arr.slice(0);
   m.splice(m.length - 1, 1);
   return m;
@@ -103,6 +112,24 @@ export function arrDelrepeat(arr) {
     return result;
 };
 
+//删除数组中的空格null,undefined之类的包括字符串类型的
+export let arrDelNull = (arr) => {
+    let arr_ = []
+    for (let i  of arr) {
+        if (i !== "" && i !== null && i !== undefined && i !== "null" && i !== "undefined") {
+            arr_.push(i)
+        }
+    }
+    return arr_
+}
+
+//js删除指定下标的元素
+export let arrDelIndex = (arr,index) => {
+    let arr_ = cloneop(arr)
+    arr_.splice(index, 1)
+    return arr_
+}
+
 //改
 //将对象数组中的某个children塞进一个数组中
 export let arrChild = arr => {
@@ -127,6 +154,28 @@ export let arrIndexSet = (arr, index, value) => {
   arr_.splice(index, 0, value);
   return arr_;
 };
+
+//将数组中的每个字符串都转成数字
+export const arrStringToNumber=(arr)=>{
+    let _arr = []
+    if(isArrayop(arr)){
+        for (let i of arr){
+            _arr.push(StringToNumber(i))
+        }
+    }
+    return _arr;
+}
+
+//将数组中的每个数字都转成字符串
+export const arrNumberToString=(arr)=>{
+    let _arr = []
+    if(isArrayop(arr)){
+        for (let i of arr){
+            _arr.push(i.toString())
+        }
+    }
+    return _arr;
+}
 
 
 //排序

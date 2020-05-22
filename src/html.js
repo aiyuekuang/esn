@@ -102,28 +102,9 @@ export let getWidth = () => {
 };
 
 //对象转url字符串
-export let urlencode = (data, isPrefix) => {
-    isPrefix = isPrefix ? isPrefix : false;
+export let urlencode =(str)=> {
+    str = (str + '').toString();
 
-    let prefix = isPrefix ? '?' : '';
-
-    let _result = [];
-
-    for (let key in data) {
-        let value = data[key];
-        // 去掉为空的参数
-        if (['', undefined, null].includes(value)) {
-            continue;
-        }
-
-        if (value.constructor === Array) {
-            value.forEach(_value => {
-                _result.push(encodeURI(key) + '[]=' + encodeURI(_value.toString()));
-            });
-        } else {
-            _result.push(encodeURI(key) + '=' + encodeURI(value.toString()));
-        }
-    }
-    return _result.length ? prefix + _result.join('&') : '';
-};
-
+    return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').
+    replace(/\)/g, '%29').replace(/\*/g, '%2A').replace(/%20/g, '+');
+}

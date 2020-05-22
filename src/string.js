@@ -46,3 +46,21 @@ export let uid = () => {
     });
 };
 
+//是否是字符串
+export function isString(value) {
+    return Object.prototype.toString.call(value)=="[object String]"
+}
+
+//字符串转整数
+export const StringToNumber=(value)=>{
+    return parseInt(value);
+}
+
+//字符串转布尔值
+export const StringToBoolean=(value)=>{
+    if(value === "true"){
+        return true
+    }else {
+        return false
+    }
+}

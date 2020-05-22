@@ -33,3 +33,4 @@ export function isNumberop(val) {
     let regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/; //负浮点数
     return (regPos.test(val) || regNeg.test(val))
 }
+

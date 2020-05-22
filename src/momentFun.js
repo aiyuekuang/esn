@@ -395,6 +395,11 @@ export let momentToDate = (mom = moment()) => {
   return mom.toDate();
 };
 
+//时间戳转成字符串
+export let timestampToString = (date,format = dateFormat) => {
+  return moment(data).format(format)
+};
+
 //其他骚操作相关
 
 //转换当前时间的Unix时间戳

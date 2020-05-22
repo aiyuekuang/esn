@@ -45,3 +45,16 @@ export function cloneop(obj) {
 
     throw new Error("Unable to copy obj! Its type isn't supported.");
 }
+
+//判断是否是对象
+export function isObject(obj) {
+    return Object.prototype.toString.call(obj) === '[object Object]'
+}
+
+//去除对象中指定的属性
+export const deleteObjKey=(arr=[],obj)=>{
+    for (let i of arr){
+        delete obj[i]
+    }
+    return obj
+}

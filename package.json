@@ -1,12 +1,13 @@
 {
   "name": "esn",
-  "version": "2.0.0",
+  "version": "2.0.18",
   "description": "esn.js",
-  "main": "./src/index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "clean": "rd /s/q lib && mkdir lib",
     "lib": "npm run clean && babel src --out-dir lib",
-    "fabu": "npm publish"
+    "fabu": "npm publish",
+    "copy": "start D:\\ku/esn/bin/tihuan.bat"
   },
   "files": [
     "lib"
