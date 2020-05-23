@@ -1,5 +1,5 @@
 //截取字符串
-import {stringArrAddValue} from "./arrFun";
+import {stringArrAddValue,arrDelNull} from "./arrFun";
 
 export function strCut(str, length) {
     let len = length * 2;
