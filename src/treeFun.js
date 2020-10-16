@@ -199,6 +199,11 @@ export let treeSetData = (
 
   let loop = tree => {
     for (let i of tree) {
+
+      if (i[children] && i[children].length > 0) {
+        loop(i[children]);
+      }
+
       if (judge(i)) {
         if (typeof obj == 'function') {
           i[field] = obj();
@@ -206,9 +211,8 @@ export let treeSetData = (
           i[field] = obj;
         }
       }
-      if (i[children] && i[children].length > 0) {
-        loop(i[children]);
-      }
+
+
     }
   };
   loop(tree_);

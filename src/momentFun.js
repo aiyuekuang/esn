@@ -2,8 +2,8 @@ import moment from 'moment';
 import { isNumberop } from "./number"
 
 
-export const dateFormat = 'YYYYMMDD';
-export const monthFormat = 'YYYYMM';
+export let dateFormat = 'YYYYMMDD';
+export let monthFormat = 'YYYYMM';
 export const yearFormat = 'YYYY';
 export const timeFomat = 'YYYY-MM-DD HH:mm:ss';
 
@@ -499,5 +499,9 @@ export function NowTimeCode(){
   Result = year.toString() + month.toString() + day.toString() + hour.toString() + minutes.toString() + second.toString() + millisecond.toString();
 
   return Result;
+}
 
+export let initFormat =(_dateFormat,_monthFormat)=>{
+  dateFormat = _dateFormat;
+  monthFormat = _monthFormat;
 }

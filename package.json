@@ -1,12 +1,14 @@
 {
   "name": "esn",
-  "version": "2.0.20",
+  "version": "2.0.21",
   "description": "esn.js",
   "main": "./lib/index.js",
   "scripts": {
     "clean": "rd /s/q lib && mkdir lib",
     "lib": "npm run clean && babel src --out-dir lib",
-    "fabu": "npm publish",
+    "fabu": "npm run npm && npm run git && npm version patch && npm publish",
+    "npm": "npm set registry https://registry.npmjs.org",
+    "git": "python ./bin/release.py",
     "copy": "start D:\\ku/esn/bin/tihuan.bat"
   },
   "files": [
