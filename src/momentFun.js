@@ -2,12 +2,11 @@ import moment from 'moment';
 import { isNumberop } from "./number"
 
 
-export let dateFormat = 'YYYYMMDD';
-export let monthFormat = 'YYYYMM';
+export let dateFormat = 'YYYY-MM-DD';
+export let monthFormat = 'YYYY-MM';
 export const yearFormat = 'YYYY';
 export const timeFomat = 'YYYY-MM-DD HH:mm:ss';
 
-export const datehFormat_ = 'YYYY-MM-DD';
 
 moment.locale('zh-cn', {
   months: '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
