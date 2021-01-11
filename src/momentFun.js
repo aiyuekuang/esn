@@ -260,7 +260,7 @@ export let isLastMonday = (date, format = dateFormat) => {
 };
 
 //是否是本周一
-export let isCurrentMonday = (date, format = dateFormat) => {
+export let isCurrentMonday = (date=current(), format = dateFormat) => {
   if (isString(date)) {
     return isSame(date, currentMonday(), 'day', format);
   } else {
