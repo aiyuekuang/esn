@@ -243,7 +243,7 @@ export let diff = (date1, date2, format = dateFormat, type = null, relative = fa
 
 //是否是今天 date传字符串即可
 export let isToday = (date, format = dateFormat) => {
-  if (isNumberop(date)) {
+  if (isString(date)) {
     return isSame(date, current(), 'day', format);
   } else {
     return false;
@@ -261,7 +261,7 @@ export let isLastMonday = (date, format = dateFormat) => {
 
 //是否是本周一
 export let isCurrentMonday = (date, format = dateFormat) => {
-  if (isNumberop(date)) {
+  if (isString(date)) {
     return isSame(date, currentMonday(), 'day', format);
   } else {
     return false;
