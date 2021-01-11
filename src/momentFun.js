@@ -1,5 +1,6 @@
 import moment from 'moment';
 import { isNumberop } from "./number"
+import {isString} from "./string";
 
 
 export let dateFormat = 'YYYY-MM-DD';
@@ -251,7 +252,7 @@ export let isToday = (date, format = dateFormat) => {
 
 //是否是上周一
 export let isLastMonday = (date, format = dateFormat) => {
-  if (isNumberop(date)) {
+  if (isString(date)) {
     return isSame(date, lastMonday(), 'day', format);
   } else {
     return false;
