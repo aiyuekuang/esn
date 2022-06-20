@@ -73,6 +73,7 @@ export let getUrlParam = name => {
     return '';
 };
 
+
 //获取站点地址
 export let getLocation = () => {
     return location.origin;
