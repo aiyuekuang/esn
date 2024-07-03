@@ -1,0 +1,8 @@
+node_modules
+/dist
+.idea
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
+.DS_Store
+./dist
